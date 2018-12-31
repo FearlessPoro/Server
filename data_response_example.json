@@ -1,0 +1,14 @@
+{
+  "measurements": [
+    {
+      "Station": "Kraków, Reymonta 5d",
+      "id": 5,
+      "Time_of_measurement": "21.12.2018 17:15:06",
+      "Pressure": 100002.24,
+      "Pressure_unit": "Pa"
+    },
+    {
+      "tutaj kolejne measurmenty jak wyzej itd"
+    }
+  ]
+}

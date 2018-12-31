@@ -1,0 +1,12 @@
+{
+  "constant_columns": ["Station", "Time_of_measurement", "id"],
+  "variable_columns": ["temperature",
+                        "temperature_unit",
+                        "pressure",
+                        "pressure_unit",
+                        "humidity",
+                        "PM10",
+                        "PM10_unit",
+                        "PM2.5",
+                        "PM2.5_unit" ]
+}
