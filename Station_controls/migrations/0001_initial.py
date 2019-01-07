@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BigParticlesMeasurements',
             fields=[
-                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controlls.Measurements')),
+                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controls.Measurements')),
                 ('Value', models.FloatField()),
                 ('Unit', models.CharField(max_length=20)),
             ],
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='HumidityMeasurements',
             fields=[
-                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controlls.Measurements')),
+                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controls.Measurements')),
                 ('Value', models.FloatField()),
             ],
             options={
@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PressureMeasurements',
             fields=[
-                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controlls.Measurements')),
+                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controls.Measurements')),
                 ('Value', models.FloatField()),
                 ('Unit', models.CharField(max_length=20)),
             ],
@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SmallParticlesMeasurements',
             fields=[
-                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controlls.Measurements')),
+                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controls.Measurements')),
                 ('Value', models.FloatField()),
                 ('Unit', models.CharField(max_length=20)),
             ],
@@ -80,7 +80,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='TemperatureMeasurements',
             fields=[
-                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controlls.Measurements')),
+                ('Measurement', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='Station_controls.Measurements')),
                 ('Value', models.FloatField()),
                 ('Unit', models.CharField(max_length=20)),
             ],
@@ -91,6 +91,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='measurements',
             name='Station',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Station_controlls.Stations'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Station_controls.Stations'),
         ),
     ]

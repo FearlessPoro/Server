@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-TEST_RUNNER = 'Station_controlls.NoDbTestRunner.NoDbTestRunner'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Station_controlls.apps.StationControllsConfig',
+    'Station_controls.apps.StationControllsConfig',
     'rest_framework.authtoken'
     ]
 

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
   <title>Homepage of microcontrollers</title>
 </head>
 <body>
   <h1>Welcome to Station control room</h1>
-  <p><a href="{% url 'view_data_available' %}">/view_data_available</a> to see columns you can request.</p>
-  <p><a href="{% url 'request_data' %}">/request_data</a> to request columns, requires JSON package.</p>
-  <p><a href="{% url 'view_stations_available' %}">/view_stations_available</a> to request all available stations.</p>
-  <p>All 3 return JSON packets, </p>
+  <p><a href="{% url 'view_data_available' %}">/view_data_available</a> zwraca nazwy wszystkich kolumn, czyli rodzajów
+      danych jakie zwraca serwer</p>
+  <p><a href="{% url 'view_stations_available' %}">/view_stations_available</a> zwraca nazwy wszystkich stacji, których
+  dane można requestować</p>
+    <br><a href="{% url 'request_data' %}">/request_data</a> Ten link pozwoli Ci pobrać dane z serwera. Wysłanie requestu
+      na ten adres metodą POST, zwróci Ci dane z serwera<br> w postaci pliku JSON. Jeśli chcesz otrzymać dane z danej daty
+      lub danej stacji, dodaj do zapytania paczkę JSON z danymi jak w przykładzie poniżej:<br>
+  {<br>
+    "Time": "day/week/month/year" // zwraca dane z ostatniego dnia, 7dni, 30 dni lub 365 dni <br>
+    "Station": "Krakow, ul. Kujawska" //zwraca dane tylko z podanej stacji. Liste wszystkich stacji możezs
+    pobrać z linku  <a href="{% url 'view_stations_available' %}">/view_stations_available</a> <br>
+  } </br>
+  </p>
+<p> Każdy z linków zwraca paczkę JSON, aby ułatwić przetwarzanie przez programy.</p>
 
 </body>
 </html>

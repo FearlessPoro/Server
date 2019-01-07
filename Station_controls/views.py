@@ -5,8 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
-from Station_controlls.functions import *
-from Station_controlls.models import AllMeasurements
+from Station_controls.functions import *
+from Station_controls.models import AllMeasurements
 
 def home(request):
     html = render_to_string('home.html')
@@ -36,15 +36,11 @@ def view_stations_available(request):
     return_message = serializers.serialize("json", query)
     return JsonResponse(return_message, safe=False)
 
-# class DataRequestView(APIView):
-#     permission_classes = {IsAuthenticated, }
-#
-#     @staticmethod
-
 @csrf_exempt
 def request_data(request):
     if request.method == 'POST':
         body_data = json.loads(request.body)
+        print(body_data)
         query = AllMeasurements.objects.all()
         if "Time" in body_data:
             if body_data["Time"] == "day":
@@ -57,7 +53,8 @@ def request_data(request):
                 query = query.filter(Czas_pomiaru__range=(datetime.today() - timedelta(days=365), datetime.today()))
         if "Station" in body_data:
             query = query.filter(Stacja__exact=body_data["Station"])
-            #query = query.only("Station", "Temperature")
+        if "Column" in body_data:
+            query = query.only(*body_data["Columns"])
         return_message = serializers.serialize("json", query)
         return JsonResponse(return_message, safe=False)
 

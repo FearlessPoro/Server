@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.authtoken import views
 
-from Station_controlls.views import home, SendView, view_data_available, request_data, view_stations_available
+from Station_controls.views import home, SendView, view_data_available, request_data, view_stations_available
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('home/', home, name='home'),
     path('send/', SendView.send, name='send'),
     path('obtain_token/', views.obtain_auth_token),

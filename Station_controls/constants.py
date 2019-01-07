@@ -13,6 +13,7 @@ class Constants:
     DATA_PARSING_ENDED_MESSAGE = 'Zakonczono przetwarzanie danych.\n'
     ID_MESSAGE = 'Dodane dane maja id: '
     INCORRECT_REQUEST_TYPE_MESSAGE = 'Ta strona powinna byc wywolywana tylko poprzez poprawne paczki danych JSON\n'
+    NO_SUCH_TOKEN_MESSAGE = "Ten token nie jest w bazie danych. Upewnij się że twój token jest aktualny.\n"
 
     SMALL_PARTICLES_MEASUREMENTS_VALUE_VARIABLE = 'PM25_value'
     SMALL_PARTICLE_MEASUREMENTS_UNIT_VARIABLE = "PM25_unit"
@@ -25,6 +26,7 @@ class Constants:
     HUMIDITY_VALUE_VARIABLE = 'humidity_value'
     STATION_ID_VARIABLE = "Station_ID"
     TIME_OF_MEASUREMENTS_VARIABLE = "Time_of_measurements"
+
 
 
 

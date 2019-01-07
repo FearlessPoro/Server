@@ -14,7 +14,8 @@ class DataRequestTest(TestCase):
         def test_check_request_parsing(self):
             post_data = {
                             "Time": "day",
-                            "Station": "Gmina Skawina, Zelczyna"
+                            "Station": "Gmina Skawina, Zelczyna",
+                            "Columns": ["Stations", "Temperature"]
                         }
             response = self.client.post(path="/request_data/", data=json.dumps(post_data), content_type="application/json", secure=False)
             print(json.loads(response.content))

@@ -1,8 +1,8 @@
 import json
 from datetime import datetime, timedelta
 
-from Station_controlls.constants_PL import Constants
-from Station_controlls.models import *
+from Station_controls.constants import Constants
+from Station_controls.models import *
 from rest_framework.authtoken.models import Token
 
 
@@ -84,6 +84,10 @@ class Functions:
                 return_message += Constants.INSUFFICIENT_DATA_FOUND_ERROR
         except SyntaxError:
             return_message += Constants.INCORRECT_REQUEST_TYPE_MESSAGE
+            return return_message
+        except Exception:
+            return_message += Constants.NO_SUCH_TOKEN_MESSAGE
+            return return_message
         return return_message
 
     @staticmethod
