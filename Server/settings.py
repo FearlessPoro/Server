@@ -20,10 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+*9798oj-wm)!89x*btvk*t2g%ri!f#qju32e+#^uy%ar6%t@*'
+SECRET_KEY = os.environ.get('secret_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -89,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'weather',
         'USER': 'django',
-        'PASSWORD': 'secret_pass',
+        'PASSWORD': os.environ.get("weather_db_pass"),
         'HOST': 'localhost',
         'PORT': '3306'
 
